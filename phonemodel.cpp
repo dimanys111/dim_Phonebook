@@ -185,8 +185,10 @@ QString PhoneModel::get_person_address(int row)
 void PhoneModel::remove_person(int row)
 {
     int index = proxy_model.mapToSource(proxy_model.index(row, 0)).row();
+
+    beginRemoveRows(QModelIndex(), index, index);
     m_persons.removeAt(index);
-    update();
+    endRemoveRows();
 }
 
 int PhoneModel::rowCount(const QModelIndex& parent) const

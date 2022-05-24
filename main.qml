@@ -129,9 +129,7 @@ Window {
                     onClicked: {
                         if(list_view.currentIndex>-1){
                             phone_model.remove_person(list_view.currentIndex)
-                        }
-                        if(list_view.currentIndex>=list_view.count){
-                            list_view.currentIndex=list_view.count-1
+                            phone_model.update()
                         }
                     }
                 }
